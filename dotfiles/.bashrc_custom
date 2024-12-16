@@ -1,0 +1,10 @@
+alias code="code --enable-features=UseOzonePlatform --ozone-platform=wayland"
+
+if uwsm check may-start && uwsm select; then
+  exec systemd-cat -t uwsm_start uwsm start default
+fi
+
+# If we are starting from a terminal then display the output of fastfetch
+if [[ $(tty) == *"pts"* ]]; then
+  fastfetch
+fi

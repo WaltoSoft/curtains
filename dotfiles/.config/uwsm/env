@@ -1,0 +1,24 @@
+# Toolkit backend variables
+export GDK_BACKEND=wayland,x11,*
+export SDL_VIDEODRIVER=wayland
+export CLUTTER_BACKEND=wayland
+
+# Qt variables
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
+export QT_QPA_PLATFORM=wayland;xcb
+export QT_WAYLAND_DISABLE_WINDOWDECORATION=1  
+export QT_QPA_PLATFORMTHEME=qt6ct
+
+# XDG Specifications According to the WIKI it's not necessary to set these
+# bebcause uwsm sets them automatically
+#export XDG_CURRENT_DESKTOP=Hyprland
+#export XDG_SESSION_TYPE=wayland
+#export XDG_SESSION_DESKTOP=Hyprland
+
+export MOZ_ENABLE_WAYLAND=1
+export GDK_SCALE=1
+export ELECTRON_OZONE_PLATFORM_HINT=auto
+
+export CURTAINS_DIR=$HOME/.curtains
+export CURTAINS_SCRIPTS_DIR=$CURTAINS_DIR/scripts
+export CURTAINS_WALLPAPER_DIR=$CURTAINS_DIR/wallpaper

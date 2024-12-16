@@ -1,0 +1,1 @@
+export HYPRLAND_CONFIG=$CURTAINS_DIR/config/hyprland.conf
