@@ -1,6 +1,6 @@
 SCRIPTS_DIR=$(dirname "$(realpath "$0")")
 
-source $SCRIPTS_DIR/serviceList.sh
+source $REPO_DIR/scripts/serviceList.sh
 
 executeScript() {
   echoText -fc $COLOR_INSTALL "Services"
