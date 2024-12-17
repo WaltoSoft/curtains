@@ -1,0 +1,10 @@
+[Unit]
+Description=Curtains Wallpaper Downloader
+
+[Service]
+ExecStart=%h/.curtains/scripts/curtains-wallpaper-downloader.sh -h 12 -m 0
+WorkingDirectory=%h/.curtains/scripts
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

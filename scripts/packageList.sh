@@ -47,6 +47,7 @@ ADDITIONAL_PACKAGE_LIST=(
   "spicetify-cli"
   "spotify"
   "swappy"
+  "swww"
   "udiskie"
   "uwsm"
   "vim"

@@ -94,6 +94,7 @@ installPackages() {
 startInstallation() {
   echo "Starting Installation."    
   cd "${REPO_DIR}/scripts"
+  mkdir -p $LOGS_DIR
   ./install.sh 2>&1 | tee  >(sed -r "s/\x1B \[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g" > $LOG_FILE)
 }
 
