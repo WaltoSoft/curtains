@@ -4,14 +4,17 @@ set -e
 TARGET_HOUR=0
 TARGET_MINUTE=0
 FIRST_RUN=true
+START=false
 
 mkdir -p $CURTAINS_WALLPAPER_DIR
 
-while getopts ":h:m:" option; do
+while getopts ":h:m:s" option; do
   case $option in
     h)  TARGET_HOUR="${OPTARG}"
         ;;
     m)  TARGET_MINUTE="${OPTARG}"
+        ;;
+    s)  START=true
         ;;
     :)  echo "Option -${OPTARG} requires an argument."
         exit 1;;
@@ -43,22 +46,37 @@ downloadBingImage() {
   fi  
 }
 
-while true; do
-  CURRENT_HOUR=$(date +%H)
-  CURRENT_MINUTE=$(date +%M)
-  NEW_IMAGE_FILE=""
-  SLEEP_TIMEOUT=1
-
-  if ! swww query &>/dev/null; then
-    SLEEP_TIMEOUT=1
-  else    
-    if $FIRST_RUN || ([ "$CURRENT_HOUR" -eq "$TARGET_HOUR" ] && [ "$CURRENT_MINUTE" -eq "$TARGET_MINUTE" ]); then
-      FIRST_RUN=false
-      NEW_IMAGE_FILE=$(downloadBingImage)
-      swww img "${NEW_IMAGE_FILE}"
-    fi
-    SLEEP_TIMEOUT=60
+if $START ; then
+  if ! systemctl is-enabled --quiet curtains-wallpaper-downloader.service ; then
+    systemctl --user enable curtains-wallpaper-downloader.service
   fi
 
-  sleep $SLEEP_TIMEOUT
-done
+  if ! systemctl is-active --quiet curtains-wallpaper-downloader.service ; then
+    systemctl --user start curtains-wallpaper-downloader.service
+  fi
+else
+  while true; do
+    CURRENT_HOUR=$(date +%H)
+    CURRENT_MINUTE=$(date +%M)
+    NEW_IMAGE_FILE=""
+    SLEEP_TIMEOUT=1
+
+    if ! swww query &>/dev/null; then
+      SLEEP_TIMEOUT=1
+    else    
+      if $FIRST_RUN || ([ "$CURRENT_HOUR" -eq "$TARGET_HOUR" ] && [ "$CURRENT_MINUTE" -eq "$TARGET_MINUTE" ]); then
+        echo "Downloading a new image file"
+        FIRST_RUN=false
+        NEW_IMAGE_FILE=$(downloadBingImage)
+        echo "Image filed downloaded: ${NEW_IMAGE_FILE}"
+	
+	      if [ -n $NEW_IMAGE_FILE ] ; then 
+	        swww img "${NEW_IMAGE_FILE}"
+	      fi
+      fi
+      SLEEP_TIMEOUT=60
+    fi
+
+    sleep $SLEEP_TIMEOUT
+  done
+fi
