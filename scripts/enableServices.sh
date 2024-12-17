@@ -14,7 +14,7 @@ executeScript() {
   done
 
   for service in "${USER_SERVICE_LIST[@]}"; do
-    if enableService $service ; then
+    if enableUserService $service ; then
       echoText "User Service '${service}' has been enabled"
     else
       echoText -c $COLOR_ERROR "ERROR: Error occurred enabling user '${service}' service"

@@ -145,6 +145,7 @@ installYay() {
     if buildIt && installIt ; then
       if $(isPackageInstalled $yayPackage) ; then
         echoText -c $COLOR_SUCCESS "YAY!!! '${yayPackage}' installed successfully"
+        cd $GIT_DIR
         rm -rf $yayGitFolder 2>&1 | formatOutput -C $COLOR_INSTALL -p $PREFIX_INSTALL
       else
         echoText -c $COLOR_ERROR "ERROR: '${yayPackage}' is not installed"
