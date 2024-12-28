@@ -41,7 +41,7 @@ downloadBingImage() {
 }
 
 if $START ; then
-  systemctl --user start curtains-wallpaper-downloader.service
+  systemctl --user start curtains-wallpaper-service.service
 else
   while true; do
     NEW_IMAGE_FILE=""

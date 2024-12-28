@@ -3,7 +3,6 @@ Description=Curtains Wallpaper Service
 After=network.target
 
 [Service]
-Type=Simple
 ExecStart=%h/.curtains/scripts/curtains-wallpaper-service.sh
 WorkingDirectory=%h/.curtains/scripts
 Restart=on-failure
