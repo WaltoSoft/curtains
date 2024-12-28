@@ -1,5 +1,3 @@
-SCRIPTS_DIR=$(dirname "$(realpath "$0")")
-
 source $REPO_DIR/scripts/serviceList.sh
 
 executeScript() {

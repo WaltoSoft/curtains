@@ -223,11 +223,22 @@ formatOutput() {
   done
 }
 
+isUserFolder() {
+  existsOrExit "$1" "No folder path provided to isUserFolder"
+  local folderPath=$1
+
+  if [[ $folderPath == "/home/$SUDO_USER/"* ]]; then
+    echo true
+  else
+    echo false
+  fi
+}
+
 ensureFolder() {
   local folderPath=$1
   local useSudoUser=false
   
-  if [[ $folderPath == "/home/$SUDO_USER/"* ]]; then
+  if $(isUserFolder $folderPath) ; then
     useSudoUser=true
   fi
 

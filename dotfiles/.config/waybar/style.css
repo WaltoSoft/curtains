@@ -1,0 +1,187 @@
+/* Define CSS variables */
+@define-color bg_main rgba(25, 25, 25, 0.65);
+@define-color bg_main_tooltip rgba(0, 0, 0, 0.7);
+@define-color bg_hover rgba(200, 200, 200, 0.3);
+@define-color bg_active rgba(100, 100, 100, 0.5);
+@define-color border_main rgba(255, 255, 255, 0.2);
+@define-color content_main white;
+@define-color content_inactive rgba(255, 255, 255, 0.25);
+
+* {
+	text-shadow: none;
+	box-shadow: none;
+  border: none;
+  border-radius: 0;
+	font-family: "Material Design Icons";
+  font-size: 14px;
+}
+
+window {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+window#waybar {
+  background:  @bg_main;
+  border-top: 1px solid @border_main;
+  color: @content_main;
+}
+
+tooltip {
+  background: @bg_main_tooltip;
+  border-radius: 5px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: @border_main;
+}
+
+tooltip label{
+  color: @content_main;
+}
+
+/* custom/menu-button module ------------------------------- */ 
+#custom-menu-button {
+	font-size: 24px;
+	color: #1793D1;
+	margin-right:15px;
+	transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+#custom-menu-button:hover {
+  background:  @bg_hover;
+	color: @content_main;
+}
+/* custom/menu-button module ------------------------------- */ 
+
+/* hyprland/workspaces module ------------------------------ */
+#workspaces {
+  color: transparent;
+	margin-right: 1.5px;
+	margin-left: 1.5px;
+}
+#workspaces button {
+  padding: 3px;
+  color: @content_inactive;
+	transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+#workspaces button.active {
+	color: @content_main;
+	border-bottom: 3px solid white;
+}
+#workspaces button.focused {
+  color: @bg_active;
+}
+#workspaces button.urgent {
+	background:  rgba(255, 200, 0, 0.35);
+	border-bottom: 3px dashed @warning_color;
+	color: @warning_color;
+}
+#workspaces button:hover {
+  background: @bg_hover;
+	color: @content_main;
+}
+/* hyprland/workspaces module ------------------------------ */
+
+/* wlr/taskbar module -------------------------------------- */
+#taskbar {
+}
+
+#taskbar button {
+	border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+	margin-left: 2px;
+	margin-right: 2px;
+  padding-left: 8px;
+  padding-right: 8px;
+  color: white;
+	transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+#taskbar button.active {
+	border-bottom: 3px solid white;
+  background: @bg_active;
+}
+
+#taskbar button:hover {
+	border-bottom: 3px solid white;
+  background: @bg_hover;
+	color: @content_main;
+}
+/* wlr/taskbar module -------------------------------------- */
+
+/* cava module --------------------------------------------- */
+#cava {
+	font-family: "JetBrainsMono Nerd Font";
+	margin-left: 5px;
+	margin-right: 5px;
+	transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+/* cava module --------------------------------------------- */
+
+
+/* cpu, memory modules-------------------------------------- */
+#custom-curtains-cpu, #memory {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+/* cpu, memory modules-------------------------------------- */
+
+/* tray module --------------------------------------------- */
+#tray{
+	margin-left: 5px;
+	margin-right: 5px;
+}
+#tray > .passive {
+	border-bottom: none;
+}
+#tray > .active {
+	border-bottom: 3px solid transparent;
+}
+#tray > .needs-attention {
+	border-bottom: 3px solid @warning_color;
+}
+#tray > widget {
+	transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+/* tray module --------------------------------------------- */
+
+/* pulseaudio module --------------------------------------- */
+#pulseaudio {
+	margin-left: 5px;
+  margin-right: 5px;
+	font-family: "JetBrainsMono Nerd Font";
+	transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+/* pulseaudio module --------------------------------------- */
+
+/* custom/curtains-battery module -------------------------- */
+#custom-curtains-battery {
+	margin-left: 5px;
+	margin-right: 5px;
+	transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+#custom-curtains-battery.warning {
+	color: yellow;
+}
+
+#custom-curtains-battery.critical {
+	color: red;
+}
+/* custom/curtains-battery module -------------------------- */
+
+/* custom/curtains-clock module ---------------------------- */
+#custom-curtains-clock {
+  margin-left: 5px;
+  margin-right: 5px;
+	transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+/* custom/curtains-clock module ---------------------------- */
+
+/* spacing modules ----------------------------------------- */
+#custom-wb-start {
+	margin-left: 10px;
+}
+
+#custom-wb-end {
+	margin-right: 10px;
+}
+/* spacing modules ----------------------------------------- */

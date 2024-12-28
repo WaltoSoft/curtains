@@ -76,7 +76,7 @@ installPackages() {
   pacman -Syyu > /dev/null 2>&1
   pacman -Fy > /dev/null 2>&1
 
-  pacman -Sq --noconfirm git gum rsync figlet > /dev/null 2>&1
+  pacman -Sq --noconfirm vim git gum rsync figlet > /dev/null 2>&1
 }
 
 startInstallation() {

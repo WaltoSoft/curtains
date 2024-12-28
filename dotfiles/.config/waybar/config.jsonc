@@ -1,0 +1,162 @@
+{
+  "layer": "bottom",
+  "position": "bottom",
+  "mode": "dock",
+  "exclusive": true,
+  "gtk-layer-shell": true,
+  "margin-bottom": -1,
+  "passthrough": false,
+  "height": 41,
+  "reload_style_on_change": true,
+  "modules-left": [
+    "custom/wb-start",
+    "custom/menu-button",
+    "hyprland/workspaces",
+    "wlr/taskbar"
+  ],
+  "modules-center": [],
+  "modules-right": [
+    "custom/curtains-cpu",
+    "memory",
+    "tray",
+    "pulseaudio",
+    "custom/curtains-battery",
+    "custom/curtains-clock",
+    "custom/wb-end"
+  ],
+
+  /*  Left Modules -----------------------------------------------  */
+  "custom/menu-button": {
+    "format": "󱡇",
+    "on-click": "pkill rofi || rofi -show drun",
+    "tooltip-format": "Menu"
+  },
+  "hyprland/workspaces": {
+    "on-scroll-up": "hyprctl dispatch workspace r+1",
+    "on-scroll-down": "hyprctl dispatch workspace r-1"
+  },
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 28,
+    "spacing": 3,
+    "on-click-middle": "close",
+    "tooltip-format": "{title}",
+    "ignore-list": [],
+    "on-click": "activate"
+  },
+  /*  Left Modules -----------------------------------------------  */
+
+  /*  Center Modules ---------------------------------------------  */
+  "cava": {
+    "cava_config": "/home/billy/.config/cava/config",
+    "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+    "bars": 14,
+    "bar_delimiter": 0,
+    "method": "pulse",
+    "input_delay": 0    
+  },
+  /*  Center Modules ---------------------------------------------  */
+
+  /*  Right Modules ----------------------------------------------  */
+  "custom/curtains-cpu": {
+    "exec": "/home/billy/.curtains/scripts/curtains-cpu-module.sh",
+    "return-type": "json",
+    "interval": 1,
+    "format": "<span size='12pt'>{icon}</span>",
+    "format-icons": [
+      "<span color='#69ff94'>▁</span>", //green
+      "<span color='#2aa9ff'>▂</span>", //blue
+      "<span color='#f8f8f2'>▃</span>", //white
+      "<span color='#f8f8f2'>▄</span>", //white
+      "<span color='#ffffa5'>▅</span>", //yellow
+      "<span color='#ffffa5'>▆</span>", //yellow
+      "<span color='#ff9977'>▇</span>", //orange
+      "<span color='#dd532e'>█</span>"  //red
+    ]
+  },
+  "memory": {
+    "interval": 1,
+    "max-length": 10,
+    "tooltip-format": "Memory: {percentage}% Used",
+    "format": "<span size='12pt'>{icon}</span>",
+    "format-icons": [
+      "<span color='#69ff94'>▁</span>", //green
+      "<span color='#2aa9ff'>▂</span>", //blue
+      "<span color='#f8f8f2'>▃</span>", //white
+      "<span color='#f8f8f2'>▄</span>", //white
+      "<span color='#ffffa5'>▅</span>", //yellow
+      "<span color='#ffffa5'>▆</span>", //yellow
+      "<span color='#ff9977'>▇</span>", //orange
+      "<span color='#dd532e'>█</span>"  //red
+    ]
+  },
+  "tray": {
+    "spacing": 5
+  },
+  "pulseaudio": {
+      "max-volume": 150,
+      "scroll-step": 10,
+      "format": "<span size='12pt'>{icon}</span>",
+      "tooltip-format": "{volume}%",
+      "format-muted": "",
+      "format-icons": {
+        "default": [
+          "",
+          "",
+          ""
+        ]
+      },
+      "on-click": "pavucontrol"
+  },
+  "custom/curtains-battery": {
+    "exec": "/home/billy/.curtains/scripts/curtains-battery-module.sh",
+    "return-type": "json",
+    "interval": 1,
+    "format": "<span size='12pt'>{icon}</span>",
+    "format-icons": {
+      "Battery 0": "󿂎",
+      "Battery 10": "󰁺",
+      "Battery 20": "󿁻",
+      "Battery 30": "󰁼",
+      "Battery 40": "󰁽",
+      "Battery 50": "󰁾",
+      "Battery 60": "󰁿",
+      "Battery 70": "󰂀",
+      "Battery 80": "󰂁",
+      "Battery 90": "󰂂",
+      "Battery 100": "󰁹",
+      "Battery 0 (Charging)": "󰢟",
+      "Battery 10 (Charging)": "󰢜",
+      "Battery 20 (Charging)": "󰂆",
+      "Battery 30 (Charging)": "󰂇",
+      "Battery 40 (Charging)": "",
+      "Battery 50 (Charging)": "󰢝",
+      "Battery 60 (Charging)": "󰂉",
+      "Battery 70 (Charging)": "󰢞",
+      "Battery 80 (Charging)": "󰂊",
+      "Battery 90 (Charging)": "󰂋",
+      "Battery 100 (Charging)": "󰂄"
+    }
+  },
+  "custom/curtains-clock": {
+    "exec": "/home/billy/.curtains/scripts/curtains-clock-module.sh",
+    "return-type": "json",
+    "format": "{}\r{alt}",
+    "justify": "center",
+    "interval": 1
+  },
+  /*  Right Modules ----------------------------------------------  */
+
+  /*  Spacers ----------------------------------------------------  */
+  "custom/wb-start": {
+    "format": "  ",
+    "interval" : "once",
+    "tooltip": false  
+  },
+  "custom/wb-end": {
+    "format": "  ",
+    "interval" : "once",
+    "tooltip": false  
+  }
+  /*  Spacers ----------------------------------------------------  */
+}
