@@ -110,8 +110,8 @@ tooltip label{
 /* cava module --------------------------------------------- */
 #cava {
   font-family: "JetBrainsMono Nerd Font";
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 2px;
+  margin-right: 2px;
   transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 /* cava module --------------------------------------------- */
@@ -119,15 +119,15 @@ tooltip label{
 
 /* cpu, memory modules-------------------------------------- */
 #custom-curtains-cpu, #memory {
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 3px;
+  padding-right: 3px;
 }
 /* cpu, memory modules-------------------------------------- */
 
 /* tray module --------------------------------------------- */
 #tray{
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 2px;
+  margin-right: 2px;
 }
 #tray > .passive {
   border-bottom: none;
@@ -145,8 +145,8 @@ tooltip label{
 
 /* pulseaudio module --------------------------------------- */
 #pulseaudio {
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 2px;
+  margin-right: 2px;
   font-family: "JetBrainsMono Nerd Font";
   transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
@@ -154,8 +154,8 @@ tooltip label{
 
 /* custom/curtains-battery module -------------------------- */
 #custom-curtains-battery {
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 2px;
+  margin-right: 2px;
   transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
@@ -170,8 +170,8 @@ tooltip label{
 
 /* custom/curtains-clock module ---------------------------- */
 #custom-curtains-clock {
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 2px;
+  margin-right: 2px;
   transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 /* custom/curtains-clock module ---------------------------- */
