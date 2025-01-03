@@ -2,6 +2,7 @@
 CORE_PACKAGE_LIST=(
   "hyprland-git"
   "hyprlock-git"
+  "hypridle-git"
   "hyprpicker-git"
   "xdg-desktop-portal-hyprland-git"
 )

@@ -1,0 +1,13 @@
+[Unit]
+Description=Curtains-Hyprland's idle daemon
+Documentation=https://wiki.hyprland.org/Hypr-Ecosystem/hypridle
+PartOf=graphical-session.target
+After=graphical-session.target
+ConditionEnvironment=WAYLAND_DISPLAY
+
+[Service]
+ExecStart=/usr/bin/hypridle -c $CURTAINS_HYPRIDLE_CONFIG
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target
