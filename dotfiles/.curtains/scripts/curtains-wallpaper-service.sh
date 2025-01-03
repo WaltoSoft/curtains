@@ -63,6 +63,9 @@ else
       fi
 
       if [ -f "${NEW_IMAGE_FILE}" ]; then
+        python3 "${CURTAINS_SCRIPTS_DIR}/hyprlock-prepare-background.py" $NEW_IMAGE_FILE "${CURTAINS_CONFIG_DIR}/hyprlock.jpg" 30
+        echo "Created hyprlock.jpg"
+
         swww img "${NEW_IMAGE_FILE}"
         echo "Image sent to swww"
       fi
