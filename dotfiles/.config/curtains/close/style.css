@@ -1,0 +1,46 @@
+@define-color highlight-color #1793D1;
+
+.window {
+  background-color: rgba(0,0,0, 0.5);
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  color: rgba(0, 0, 0, 1);
+  background-color: rgba(255, 255, 255, 0.7);
+  background-repeat: no-repeat;
+  background-image:none;
+  border: none;
+  box-shadow: none;
+  outline-style: none;
+  text-shadow: none;
+}
+
+button:focus {
+  background-color: @highlight-color;
+}
+
+button:hover {
+  background-color: @highlight-color;
+}
+
+.button-icon {
+  font-family: 'Material Design Icons';
+  font-size: $icon_font_size;
+}
+
+.button-text {
+  font-family: 'Noto Sans Gothic';
+  font-size: $text_font_size;
+}
+
+button:hover .button-icon {
+  font-size: $icon_font_size_hover;
+  transition: all 0.3s cubic-bezier(.55,0.0,.28,1.682);
+}
+
+button:hover .button-text {
+  font-size: $text_font_size_hover;
+  transition: all 0.3s cubic-bezier(.55,0.0,.28,1.682);
+}

@@ -1,6 +1,6 @@
 alias code="code --enable-features=UseOzonePlatform --ozone-platform=wayland"
-alias hyprlock="hyprlock -c $CURTAINS_CONFIG_DIR/hyprlock.conf"
-alias hypridle="hypridle -c $CURTAINS_CONFIG_DIR/hypridle.conf"
+alias hyprlock="hyprlock -c ${CURTAINS_HYPRLOCK_CONFIG}"
+alias hypridle="hypridle -c ${CURTAINS_HYPRIDLE_CONFIG}"
 
 if uwsm check may-start && uwsm select; then
   exec systemd-cat -t uwsm_start uwsm start default

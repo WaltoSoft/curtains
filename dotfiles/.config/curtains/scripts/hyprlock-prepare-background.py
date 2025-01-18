@@ -5,7 +5,7 @@
 import sys
 from PIL import Image, ImageFilter, ImageDraw
 
-def blur_left_side(src, out, blur_width_percent):
+def blur_left_side(src, out, blur_width_percent, radius):
   image = Image.open(src)
   width, height = image.size
   blur_width = int(width * blur_width_percent / 100)
@@ -14,7 +14,7 @@ def blur_left_side(src, out, blur_width_percent):
   left_side = image.crop((0, 0, blur_width, height))
   
   # Blur the left side
-  blurred_left_side = left_side.filter(ImageFilter.GaussianBlur(radius=100))
+  blurred_left_side = left_side.filter(ImageFilter.GaussianBlur(radius=radius))
   
   # Create a semi-transparent overlay
   overlay = Image.new('RGBA', blurred_left_side.size, (0, 0, 0, 64))  # Black with 50% opacity
@@ -25,13 +25,14 @@ def blur_left_side(src, out, blur_width_percent):
   image.save(out)
 
 def main():
-  if len(sys.argv) != 4:
-    print("Usage: python3 hyprlock-prepare-background.py input_image output_image blur_width_percent")
+  if len(sys.argv) < 4:
+    print("Usage: python3 hyprlock-prepare-background.py input_image output_image blur_width_percent <radius>")
     sys.exit(1)
   src = sys.argv[1]
   out = sys.argv[2]
   blur_width_percent = int(sys.argv[3])
-  blur_left_side(src, out, blur_width_percent)
+  radius = int(sys.argv[4]) if len(sys.argv) == 5 else 100
+  blur_left_side(src, out, blur_width_percent, radius)
 
 if __name__ == "__main__":
   main()

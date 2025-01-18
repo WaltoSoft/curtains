@@ -1,1 +1,1 @@
-export HYPRLAND_CONFIG=$CURTAINS_DIR/config/hyprland.conf
+export HYPRLAND_CONFIG=$CURTAINS_DIR/hyprland/hyprland.conf

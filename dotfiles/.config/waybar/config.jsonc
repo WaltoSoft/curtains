@@ -22,6 +22,7 @@
     "pulseaudio",
     "custom/curtains-battery",
     "custom/curtains-clock",
+    "custom/curtains-power",
     "custom/wb-end"
   ],
 
@@ -144,6 +145,11 @@
     "format": "{}\r{alt}",
     "justify": "center",
     "interval": 1
+  },
+
+  "custom/curtains-power": {
+    "format": "<span size='12pt'>󰐥</span>",
+    "on-click": "/home/billy/.curtains/scripts/curtains-halt.sh"
   },
   /*  Right Modules ----------------------------------------------  */
 

@@ -23,6 +23,7 @@ ADDITIONAL_PACKAGE_LIST=(
   "git"
   "gnome-text-editor"
   "gst-plugin-pipewire"
+  "imagemagick"
   "jq"
   "kitty"
   "less"
