@@ -1,20 +1,30 @@
 @define-color highlight-color #1793D1;
 
-.window {
+window {
   background-color: rgba(0,0,0, 0.5);
+  background-image: url($background_image);
+  background-size:cover;
+  background-repeat:no-repeat;
   margin: 0;
   padding: 0;
 }
 
 button {
   color: rgba(0, 0, 0, 1);
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.4);
   background-repeat: no-repeat;
   background-image:none;
   border: none;
   box-shadow: none;
   outline-style: none;
   text-shadow: none;
+  min-width: $button_size;
+  min-height: $button_size;
+  transition: all 200ms ease;
+}
+
+button:active {
+  transform: scale(0.95);
 }
 
 button:focus {
@@ -23,16 +33,7 @@ button:focus {
 
 button:hover {
   background-color: @highlight-color;
-}
-
-.button-icon {
-  font-family: 'Material Design Icons';
-  font-size: $icon_font_size;
-}
-
-.button-text {
-  font-family: 'Noto Sans Gothic';
-  font-size: $text_font_size;
+  opacity: 1;
 }
 
 button:hover .button-icon {
@@ -42,5 +43,16 @@ button:hover .button-icon {
 
 button:hover .button-text {
   font-size: $text_font_size_hover;
-  transition: all 0.3s cubic-bezier(.55,0.0,.28,1.682);
+  transition: all 0.3s cubic-bezier(.55,0.0,.28,1.682);  
 }
+
+button .button-icon {
+  font-family: 'Material Design Icons';
+  font-size: $icon_font_size;
+}
+
+button .button-text {
+  font-family: 'Noto Sans Gothic';
+  font-size: $text_font_size;
+}
+
