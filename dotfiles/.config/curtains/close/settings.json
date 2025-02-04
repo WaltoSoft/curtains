@@ -8,43 +8,43 @@
       "id": "lock",
       "command": "loginctl lock-session",
       "icon": "󰍁",
-      "keybind": "l",
-      "text": "Lock"
+      "text": "<u>L</u>ock",
+      "keybind": "l"
     },
     {
       "id": "logout",
       "command": "hyprctl dispatch exit",
       "icon": "󰍃",
-      "keybind": "o",
-      "text": "Logout"
+      "text": "L<u>o</u>gout",
+      "keybind": "o"
     },
     {
       "id": "suspend",
       "command": "lockscreen.sh & disown && systemctl suspend",
       "icon": "󰏦",
-      "keybind": "u",
-      "text": "Suspend"
+      "text": "S<u>u</u>spend",
+      "keybind": "u"
     },
     {
       "id": "shutdown",
       "command": "systemctl poweroff",
       "icon": "󰐥",
-      "keybind": "s",
-      "text": "Shutdown"
+      "text": "<u>S</u>hutdown",
+      "keybind": "s"
     },
     {
       "id": "hibernate",
       "command": "systemctl hibernate",
       "icon": "󰸨",
-      "keybind": "h",
-      "text": "Hibernate"
+      "text": "<u>H</u>ibernate",
+      "keybind": "h"
     },
     {
       "id": "reboot",
       "command": "systemctl reboot",
       "icon": "󰑧",
-      "keybind": "r",
-      "text": "Reboot"
+      "text": "<u>R</u>eboot",
+      "keybind": "r"
     }
   ]
 }

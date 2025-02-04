@@ -33,6 +33,7 @@ ADDITIONAL_PACKAGE_LIST=(
   "less"
   "libcava"
   "linux-headers"
+  "makepkg"
   "man-db"
   "nautilus"
   "network-manager-applet"
