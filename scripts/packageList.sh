@@ -19,6 +19,7 @@ ADDITIONAL_PACKAGE_LIST=(
   "bubblewrap"
   "cava"
   "cliphist"
+  "curtains-close"
   "displaylink"
   "dunst"
   "eog"
@@ -72,7 +73,6 @@ ADDITIONAL_PACKAGE_LIST=(
   "visual-studio-code-bin"
   "waybar-cava"
   "wireplumber"
-  "wlogout"
   "xdg-desktop-portal-gtk-git"
   "xf86-video-intel"
 )

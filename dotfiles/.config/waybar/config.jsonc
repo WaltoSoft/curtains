@@ -22,7 +22,7 @@
     "pulseaudio",
     "custom/curtains-battery",
     "custom/curtains-clock",
-    "custom/curtains-power",
+    "custom/curtains-close",
     "custom/wb-end"
   ],
 
@@ -147,9 +147,9 @@
     "interval": 1
   },
 
-  "custom/curtains-power": {
+  "custom/curtains-close": {
     "format": "<span size='12pt'>󰐥</span>",
-    "on-click": "/home/billy/.curtains/scripts/curtains-halt.sh"
+    "on-click": "curtains-close"
   },
   /*  Right Modules ----------------------------------------------  */
 
