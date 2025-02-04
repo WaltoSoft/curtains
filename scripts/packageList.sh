@@ -38,6 +38,7 @@ ADDITIONAL_PACKAGE_LIST=(
   "nautilus"
   "network-manager-applet"
   "networkmanager"
+  "noto-fonts"
   "pacman-contrib"
   "parallel"
   "pamixer"
