@@ -4,9 +4,6 @@ executeScript() {
   echoText -fc $COLOR_INSTALL "Services"
   echoText "Enabling Services"
 
-  echoText "Loading evdi kernel module"
-  modprobe evdi
-
   for service in "${SERVICE_LIST[@]}"; do
     if enableService $service ; then
       echoText "Service '${service}' has been enabled"

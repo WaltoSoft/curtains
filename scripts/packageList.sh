@@ -20,10 +20,8 @@ ADDITIONAL_PACKAGE_LIST=(
   "cava"
   "cliphist"
   "curtains-close-git"
-  "displaylink"
   "dunst"
   "eog"
-  "evdi"
   "fastfetch"
   "git"
   "gnome-text-editor"
@@ -73,5 +71,4 @@ ADDITIONAL_PACKAGE_LIST=(
   "waybar-cava"
   "wireplumber"
   "xdg-desktop-portal-gtk-git"
-  "xf86-video-intel"
 )
